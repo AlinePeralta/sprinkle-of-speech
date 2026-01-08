@@ -1,5 +1,5 @@
 /*
-Proyecto: My Orbit
+Proyecto: Sprinkle of Speech
 Fuente titulos: Prompt 600
 Fuente contenid: Prompt 300
 CSS - junio 2023/*/
@@ -7,7 +7,7 @@ CSS - junio 2023/*/
 /*---FUENTE--*/
 /*ROOT*/
 /*SCROLLBAR*/
-/*LOGIN MY ORBIT*/
+/*LOGIN Sprinkle of Speech*/
 /*FOOTER*/
 /*NAVBAR*/
 /*TABLES*/
@@ -67,7 +67,7 @@ CSS - junio 2023/*/
 ::-webkit-scrollbar {
     width: var(--sbar-w)
     } /* Track */::-webkit-scrollbar-track { background: var(--sbar-fondo);} /* Handle */ ::-webkit-scrollbar-thumb { background: var(--sbar-color); }
-/*LOGIN MY ORBIT*/
+/*LOGIN Sprinkle of Speech*/
 .escuela-logo-login {
     background: var(--escuela-logo);
     padding: 120px 200px 0px 0px;
