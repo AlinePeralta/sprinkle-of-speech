@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="SERTI">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.ico">
+  <!-- ROOT CSS -->
+  <link rel="stylesheet" href="css/root.css" rel="stylesheet">
+  <title>My Orbit - D</title>
+  <script src="https://kit.fontawesome.com/14886b98f9.js" crossorigin="anonymous"></script>
+  <link href="css/mobiscroll.javascript.min.css" rel="stylesheet" />
+ 
+</head>
+
+<body>
+
+
+  <main>
+    <!-- Section: Content-text -->
+    <nav class="navbar navbar-expand-lg navbar-mainbg">
+      <a class="navbar-brand navbar-logo" href="#"> <img src="" class="escuela-logo-login"> </a>
+      <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <div class="hori-selector">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+          </li>
+          <li class="nav-item  active">
+            <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Users</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Components</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Calendar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Charts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown btn-link myprofile-myorbit">
+        <button class="btn btn-link dropdown-toggle " type="button" id="userprofile" data-mdb-toggle="dropdown"
+          aria-expanded="false">
+          Jose Omar
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="myprofile-myorbit">
+          <li><a class="dropdown-item" href="#">My Profile</a></li>
+          <li><a class="dropdown-item" href="#">Log out</a></li>
+        
+        </ul>
+      </div>
+    </nav>
+
+    <section class="background-myorbit-content overflow-hidden ">
+      <div class="container-fluid">
+
+        <div class="row tables-myorbit-movil">
+     
+    
+
+        <!-- Modal New Meet -->
+        <div class="modal fade" id="newmeet" tabindex="-1" aria-labelledby="newmeet" aria-hidden="true">
+          <div class="modal-dialog modal-movil color-b">
+            <div class="modal-content modal-movil">
+              <div class="modal-header">
+                <h6 class="modal-title color-p" id="newmeet">New Meet</h6>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row color-b">
+                  <div class="col ">
+                    <h6 class="color"><strong>Día 10 de julio</strong></h6>
+                  </div>
+
+                  <div class="col ">
+                    <h6 class="color">Profesor asignado: Omar</h6>
+                    
+                  </div>
+                  <div class="col-md-12">
+                    <select class="form-control mb-4 mt-2">
+                      <option hidden>Hora</option>
+                      <option value="1">8:00 am</option>
+                      <option value="2">9:00 am</option>
+                      <option value="3">10:00 am</option>
+                      <option value="2">11:00 am</option>
+                  
+                    </select>
+                  </div>
+                  <div class="col mb-4">
+                    <button class="btn btn-primary btn-block">Talk to Teacher</button>
+                    
+                  </div>
+
+                  <div class="col-md-12 text-center">
+                  
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <i class="fa fa-check"></i> <strong>Reunión asignada con exito:</strong> 
+                      <br>
+                     Día 10 de julio a las 10:00 am
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+
+
+
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <!---MODAL--->
+
+
+
+
+<div class="col-md-12 text-center">
+  <img src="" class="photokid-girl" id="namekid">
+  <h5 class="color-p">Dylan M</h5>
+</div>
+
+
+  <div class="col-xl-4 mb-3">
+   <a href="activity.html">
+    <div class="card widget widget-stats">
+      <div class="card-body">
+          <div class="widget-stats-container d-flex">
+              <div class="widget-stats-icon widget-stats-icon-primary">
+                  <i class="fa fa-cubes"></i>
+              </div>
+              <div class="widget-stats-content flex-fill">
+                  <span class="widget-stats-title">Today´s Activity</span>
+                  <span class="widget-stats-amount">4</span>
+                  <span class="widget-stats-info">Click to check</span>
+              </div>
+              <div class="widget-stats-indicator widget-stats-indicator-negative align-self-start">
+                  <i class="fa fa-arrow-down"></i> 4%
+              </div>
+          </div>
+      </div>
+  </div>
+   </a>
+  </div>
+ 
+  <div class="col-xl-4 mb-3">
+     <a href="reports.html">
+      <div class="card widget widget-stats">
+        <div class="card-body">
+            <div class="widget-stats-container d-flex">
+                <div class="widget-stats-icon widget-stats-icon-danger">
+                    <i class="fa fa-bar-chart"></i>
+                </div>
+                <div class="widget-stats-content flex-fill">
+                    <span class="widget-stats-title">Week Report </span>
+                    <span class="widget-stats-amount">Reports</span>
+                    <span class="widget-stats-info">Click to check</span>
+                </div>
+                <div class="widget-stats-indicator widget-stats-indicator-positive align-self-start">
+                    <i class="fa fa-arrow-up"></i> 7%
+                </div>
+            </div>
+        </div>
+    </div>
+     </a>
+  </div>
+
+ 
+  <div class="col-xl-4 mb-3">
+    <a href="camera-select.html">
+     <div class="card widget widget-stats">
+       <div class="card-body">
+           <div class="widget-stats-container d-flex">
+               <div class="widget-stats-icon widget-stats-icon-warning">
+                   <i class="fa fa-video-camera"></i>
+               </div>
+               <div class="widget-stats-content flex-fill">
+                   <span class="widget-stats-title">Camaras asignadas </span>
+                   <span class="widget-stats-amount">Cameras</span>
+                   <span class="widget-stats-info">Click to check</span>
+               </div>
+               <div class="widget-stats-indicator widget-stats-indicator-positive align-self-start">
+                   <i class="fa fa-video-camera"></i> 8
+               </div>
+           </div>
+       </div>
+   </div>
+    </a>
+ </div>
+
+<div class="row text-center ">
+  <h3 class="mt-4">Schedule a meeting</h3>
+  <div class="calendar"  data-mdb-toggle="modal" data-mdb-target="#newmeet"></div>
+</div>
+</div>
+<!-------->
+   
+        </div>
+
+      </div>
+
+    </section>
+<nav class="mobile-bottom-nav d-lg-none d-md-none">
+  <a href="menu.html" class="nav-item">
+    <i class="fas fa-child"></i>
+    <span>Menu</span>
+  </a>
+  <a href="activity.html" class="nav-item">
+    <i class="fas fa-puzzle-piece"></i>
+    <span>Activities</span>
+  </a>
+  <a href="payments.html" class="nav-item">
+    <i class="fas fa-credit-card"></i>
+    <span>Payments</span>
+  </a>
+  <a href="dropoff.html" class="nav-item active">
+    <i class="fas fa-qrcode"></i>
+    <span>My QR<br></span>
+    <!-- <small>Drop Off / Pick up</small> -->
+  </a>
+  <a href="chat.html" class="nav-item">
+    <i class="fas fa-comments"></i>
+    <span>Chat</span>
+    <span class="badge">4</span>
+  </a>
+</nav>
+
+
+ <footer class="bg-footer text-center text-white">
+
+      <div class="container p-2">
+  
+        <section class="mb-2">
+          <div class="row">
+
+            <div class="col-lg-12 col-md-12 ">
+              <p class="footer-text">
+                Iowa Colony Blvd. and Iowa School Rd
+                Rosharon 77583, USA <br>
+                <strong>Phone:</strong> +1 (979) 327-7070<br>
+                <strong>Email:</strong> contactus@futureexplorersacademy.com
+              </p>
+              <div class="social-links mt-1">
+
+                <a href="https://www.facebook.com/FutureExplorersAcademy/" target="_blank"><i
+                    class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/futureexplorersacademy" target="_blank"><i
+                    class="fa fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UClAbtTOx67wMR1u40xyxsdw" target="_blank"><i
+                    class="fa fa-youtube"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+       
+
+
+      </div>
+   
+      <div class="text-center p-1 ">
+        <p class="footer-text pb-2"> © 2023 Copyright My Orbit -
+          <a class="text-white" href="#">Powered by Phantom-Analytics. </a> All Rights Reserved</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script type="text/javascript" src="/js/myorbit.js"></script>
+  <script type="text/javascript" src="/js/calendar.js"></script>
+  <script src="js/mobiscroll.javascript.min.js"></script>
+
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+
+</body>
+
+</html>
