@@ -6,10 +6,10 @@
   <meta name="author" content="SERTI">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.ico">
+     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
   <!-- ROOT CSS -->
   <link rel="stylesheet" href="css/root.css" rel="stylesheet">
-  <title>Sprinkle of Speech - D</title>
+  <title>Sprinkle of Speech - Chat</title>
   <script src="https://kit.fontawesome.com/14886b98f9.js" crossorigin="anonymous"></script>
   <link href="css/mobiscroll.javascript.min.css" rel="stylesheet" />
  
@@ -20,49 +20,23 @@
 
   <main>
     <!-- Section: Content-text -->
-    <nav class="navbar navbar-expand-lg navbar-mainbg">
-      <a class="navbar-brand navbar-logo" href="#"> <img src="" class="escuela-logo-login"> </a>
-      <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars text-white"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <div class="hori-selector">
-            <div class="left"></div>
-            <div class="right"></div>
-          </div>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
-          </li>
-          <li class="nav-item  active">
-            <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Users</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Components</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Calendar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Charts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
-          </li>
-        </ul>
-      </div>
-      <div class="dropdown btn-link myprofile-myorbit">
-        <button class="btn btn-link dropdown-toggle " type="button" id="userprofile" data-mdb-toggle="dropdown"
-          aria-expanded="false">
-          Jose Omar
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="myprofile-myorbit">
-          <li><a class="dropdown-item" href="#">My Profile</a></li>
-          <li><a class="dropdown-item" href="#">Log out</a></li>
-        
-        </ul>
-      </div>
-    </nav>
+   
+
+    <div class="topnav" id="myTopnav">
+  
+
+      <a href="" class="navbar-brand navbar-logo"><img src="" class="escuela-logo-login"></a>
+      <a href="#dashoards" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      <a href="#user"><i class="far fa-address-book"></i> Users</a>
+      <a href="#components"><i class="far fa-clone"></i> Components</a>
+      <a href="#calendars"><i class="far fa-calendar-alt"></i> Calendar</a>
+      <a href="#charts"><i class="far fa-chart-bar"></i> Charts</a>
+      <a href="#documents"><i class="far fa-copy"></i> Documents</a>
+   
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
 
     <section class="background-myorbit-content overflow-hidden ">
       <div class="container-fluid">
@@ -203,8 +177,13 @@
 
 <div class="row text-center ">
   <h3 class="mt-4">Schedule a meeting</h3>
-  <div class="calendar"  data-mdb-toggle="modal" data-mdb-target="#newmeet"></div>
+  <button class="calendar pt-2"  data-mdb-toggle="modal" data-mdb-target="#newmeet">Meeting</button>
 </div>
+
+
+
+
+
 </div>
 <!-------->
    
@@ -213,6 +192,38 @@
       </div>
 
     </section>
+ 
+
+    <!-- Chatbot-->
+    <button class="chatbot-toggler">
+      <span class="fa fa-comment"></span>
+      <span class="fa fa-times"></span>
+    </button>
+    <div class="chatbot">
+      <header>
+        <h2>Chatbot</h2>
+        <span class="close-btn fa fa-times"></span>
+      </header>
+      <ul class="chatbox">
+       <li class="chat incoming">
+           <span class="fa fa-child"></span>
+           <div> 
+            Welcome! Please select the reason for your message:
+               <label><input type="radio" name="product" value="Support">Support</label>
+               <label><input type="radio" name="product" value="schedule">Schedule</label>
+               <label><input type="radio" name="product" value="application">Application</label>
+           </div>
+       </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+        <span id="send-btn" class="fa fa-paper-plane"></span>
+      </div>
+    </div>
+    <!-- Chatbot  -->
+
+    
+<!-- NAV FIJO FOOTER -->
 <nav class="mobile-bottom-nav d-lg-none d-md-none">
   <a href="menu.html" class="nav-item">
     <i class="fas fa-child"></i>
@@ -237,6 +248,8 @@
     <span class="badge">4</span>
   </a>
 </nav>
+<!-- NAV FIJO FOOTER -->
+
 
 
  <footer class="bg-footer text-center text-white">
@@ -282,9 +295,23 @@
   <script type="text/javascript" src="/js/myorbit.js"></script>
   <script type="text/javascript" src="/js/calendar.js"></script>
   <script src="js/mobiscroll.javascript.min.js"></script>
+  <script src="js/chatbot.js"> </script>
 
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+
 
 </body>
 

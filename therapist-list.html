@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="SERTI">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+    <!-- ROOT CSS -->
+    <link rel="stylesheet" href="css/root.css" rel="stylesheet">
+    <title>Sprinkle of Speech-Login</title>
+    <script src="https://kit.fontawesome.com/14886b98f9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<header class="main-header">
+  <div><img src="img/logo.png" alt="Sprinkle of Speech" class="logonav"></div>
+  
+  <div class="header-right">
+
+    <nav class="nav-menu" id="navMenu">
+      <a href="#" class="active-link"><i class="fas fa-home"></i> Home</a>
+      <a href="#"><i class="fas fa-user-md"></i> Therapists</a>
+      <a href="#"><i class="fas fa-users"></i> Payment </a>
+      <a href="#"><i class="fas fa-file-alt"></i> Users</a>
+      <a href="#"><i class="fas fa-chart-bar"></i> Events</a>
+      <a href="#"><i class="fas fa-cog"></i> Ajustes</a>
+    </nav>
+
+  
+    <div class="user-profile-dropdown" id="userProfile">
+      <div class="profile-trigger" onclick="toggleProfileDropdown()">
+        <span class="user-name">Aline</span>
+        <div class="user-avatar"><img src="img/avatar.png" alt=""></div>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      
+  
+      <div class="dropdown-menu-app" id="dropdownMenu">
+        <a href="#"><i class="fas fa-user-circle"></i> Mi Perfil</a>
+        <a href="#" class="logout-link"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+      </div>
+    </div>
+
+    
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+
+<main >
+<section class="container-view">
+      <div class="card-list">
+       <div class="header-section">
+
+  <h2 class="title-page">Therapists</h2>
+  
+
+  <div class="search-bar">
+    <i class="fas fa-search"></i>
+    <input type="text" placeholder="Search by name or email">
+  </div>
+</div>
+
+        <div class="list-item" onclick="location.href='therapist-list.html'">
+            <div class="avatar"><i class="fas fa-user-md"></i></div>
+            <div class="info">
+                <div class="status-badge active">Active</div>
+                <strong>Dr. Sarah Connor</strong>
+                <span>sarah.c@sprinkle.com</span>
+            </div>
+            <div class="action-arrow"><i class="fas fa-chevron-right"></i></div>
+        </div>
+
+        <div class="list-item">
+            <div class="avatar"><i class="fas fa-user-md"></i></div>
+            <div class="info">
+                <div class="status-badge inactive">Inactive</div>
+                <strong>Dr. James Wilson</strong>
+                <span>j.wilson@mail.com</span>
+            </div>
+            <div class="action-arrow"><i class="fas fa-chevron-right"></i></div>
+        </div>
+    </div>
+
+    <button class="fab-button" onclick="location.href='therapist-register.html'" aria-label="Add New Therapist">
+        <i class="fas fa-plus"></i>
+    </button>
+</section>
+</main>
+
+<footer class="bg-footer text-center ">
+
+<div class="container p-2">
+
+  <section class="mb-2">
+    <div class="row">
+
+      <div class="col-lg-12 col-md-12 ">
+        <p class="footer-text">
+        The content of this website, including but not limited to text, graphics, logos, and all other material, is owned by Sprinkle of Speech LLC with all rights reserved unless otherwise noted. Unauthorized use and/or duplication of this material without express and written permission from Sprinkle of Speech LLC is strictly prohibited.
+        </p>
+      
+      </div>
+
+    </div>
+  </section>
+  <!-- Section: Text -->
+
+
+</div>
+
+<!-- Copyright -->
+<div class="text-center p-1 ">
+ <p class="footer-text pb-2"> © 2026 Copyright Sprinkle of Speech -
+  <a class="" href="#">Powered by Phantom-Analytics. </a> All Rights Reserved</p>
+</div>
+<!-- Copyright -->
+</footer>
+<!-- Footer -->
+<script type="text/javascript" src="js/myorbit.js"></script>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+<script>
+  // Función para abrir/cerrar el menú de navegación en móvil
+  function toggleMenu() {
+    const nav = document.getElementById('navMenu');
+    const hamburger = document.getElementById('hamburger');
+    nav.classList.toggle('active');
+    hamburger.classList.toggle('open');
+  }
+
+  // Función para abrir/cerrar el dropdown de perfil
+  function toggleProfileDropdown() {
+    const dropdown = document.getElementById('dropdownMenu');
+    dropdown.classList.toggle('show');
+  }
+
+  // Cerrar dropdown si se hace clic fuera del área de perfil
+  window.onclick = function(event) {
+    if (!event.target.closest('.user-profile-dropdown')) {
+      const dropdown = document.getElementById('dropdownMenu');
+      if (dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+      }
+    }
+  }
+</script>
+</body>
+
+</html>

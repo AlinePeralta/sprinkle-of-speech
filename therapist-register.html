@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="SERTI">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+    <!-- ROOT CSS -->
+    <link rel="stylesheet" href="css/root.css" rel="stylesheet">
+    <title>Sprinkle of Speech-Login</title>
+    <script src="https://kit.fontawesome.com/14886b98f9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+  <header class="main-header">
+  <div><img src="img/logo.png" alt="Sprinkle of Speech" class="logonav"></div>
+  
+  <nav class="nav-menu" id="navMenu">
+      <a href="#" class="active-link"><i class="fas fa-home"></i> Home</a>
+      <a href="#"><i class="fas fa-user-md"></i> Therapists</a>
+      <a href="#"><i class="fas fa-users"></i> Payment </a>
+      <a href="#"><i class="fas fa-file-alt"></i> Users</a>
+      <a href="#"><i class="fas fa-chart-bar"></i> Events</a>
+      <a href="#"><i class="fas fa-cog"></i> Ajustes</a>
+    </nav>
+
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<main>
+<section id="registerSection" class="container-view">
+  <div class="card-list">
+   
+    <div class="header-section d-flex align-items-center gap-3 mb-4">
+      <button class="btn-back" onclick="history.back()" aria-label="Go back">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <h2 class="title-page mb-0">New Therapist</h2>
+    </div>
+
+
+    <form class="app-form">
+      <div class="row g-4">
+        
+  
+        <div class="col-12">
+          <div class="form-outline">
+                 <label class="form-label" for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" class="form-control" placeholder=" " required />
+       
+          </div>
+        </div>
+
+      
+        <div class="col-md-6 col-12">
+          <div class="form-outline">
+              <label class="form-label" for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder=" " required />
+          
+          </div>
+        </div>
+
+        
+        <div class="col-md-6 col-12">
+          <div class="form-outline">
+            <label class="form-label" for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder=" " required />
+            
+          </div>
+        </div>
+
+        <div class="col-8 col-md-9">
+          <div class="form-outline">
+             <label class="form-label" for="specialty">Specialty</label>
+            <input type="text" id="specialty" name="specialty" class="form-control" placeholder=" " required />
+           
+          </div>
+        </div>
+
+        <div class="col-4 col-md-3">
+          <div class="form-outline">
+            <label class="form-label" for="experience">Years</label>
+            <input type="number" id="experience" name="experience" class="form-control" placeholder=" " min="0" required />
+            
+          </div>
+        </div>
+
+    
+        <div class="col-12">
+          <label class="form-label-select mb-1 ms-1 d-block" for="center">
+            Assigned Center (School)
+          </label>
+          <select id="center" name="center" class="form-select custom-select-app" required>
+            <option value="" disabled selected>Select a Center...</option>
+            <option value="lincoln">Center1</option>
+            <option value="green-valley">Center2</option>
+          </select>
+        </div>
+
+
+     
+
+ 
+        <div class="col-md-6 col-12">
+          <div class="form-outline">
+             <label class="form-label" for="fee">Therapist Fee ($ per session)</label>
+            <input type="number" id="fee" name="fee" class="form-control" placeholder=" " step="0.01" required />
+           
+          </div>
+        </div>
+
+
+        <div class="col-12 mt-4">
+          <button type="submit" class="btn-principal w-100">
+            Create Account
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+<!-- Footer -->
+<footer class="bg-footer text-center ">
+<!-- Grid container -->
+<div class="container p-2">
+  <!-- Section: Text -->
+  <section class="mb-2">
+    <div class="row">
+
+      <div class="col-lg-12 col-md-12 ">
+        <p class="footer-text">
+        The content of this website, including but not limited to text, graphics, logos, and all other material, is owned by Sprinkle of Speech LLC with all rights reserved unless otherwise noted. Unauthorized use and/or duplication of this material without express and written permission from Sprinkle of Speech LLC is strictly prohibited.
+        </p>
+      
+      </div>
+
+    </div>
+  </section>
+  <!-- Section: Text -->
+
+
+</div>
+<!-- Grid container -->
+
+<!-- Copyright -->
+<div class="text-center p-1 ">
+ <p class="footer-text pb-2"> © 2026 Copyright Sprinkle of Speech -
+  <a class="" href="#">Powered by Phantom-Analytics. </a> All Rights Reserved</p>
+</div>
+<!-- Copyright -->
+</footer>
+<!-- Footer -->
+<script type="text/javascript" src="js/myorbit.js"></script>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+<script>
+  function toggleMenu() {
+  const nav = document.getElementById('navMenu');
+  const hamburger = document.getElementById('hamburger');
+  
+  nav.classList.toggle('active');
+  hamburger.classList.toggle('open');
+  if (nav.classList.contains('active')) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
+}
+</script>
+</body>
+
+</html>
