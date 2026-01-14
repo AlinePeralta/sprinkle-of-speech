@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="author" content="SERTI">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8256FB" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
     <!-- ROOT CSS -->
     <link rel="stylesheet" href="css/root.css" rel="stylesheet">
-    <title>Sprinkle of Speech-Login</title>
+    <title>Admin</title>
     <script src="https://kit.fontawesome.com/14886b98f9.js" crossorigin="anonymous"></script>
 </head>
 
@@ -30,7 +31,7 @@
     </nav>
 
   
-    <div class="user-profile-dropdown" id="userProfile">
+    <div class="user-profile-dropdown color-p" id="userProfile">
       <div class="profile-trigger" onclick="toggleProfileDropdown()">
         <span class="user-name">Aline</span>
         <div class="user-avatar"><img src="img/avatar.png" alt=""></div>
@@ -38,7 +39,7 @@
       </div>
       
   
-      <div class="dropdown-menu-app" id="dropdownMenu">
+      <div class="dropdown-menu-app color-p" id="dropdownMenu">
         <a href="#"><i class="fas fa-user-circle"></i> Mi Perfil</a>
         <a href="#" class="logout-link"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
       </div>
@@ -68,7 +69,7 @@
   </div>
 </div>
 
-        <div class="list-item" onclick="location.href='therapist-list.html'">
+        <div class="list-item" onclick="location.href='terapist-detail.html'">
             <div class="avatar"><i class="fas fa-user-md"></i></div>
             <div class="info">
                 <div class="status-badge active">Active</div>
@@ -78,7 +79,7 @@
             <div class="action-arrow"><i class="fas fa-chevron-right"></i></div>
         </div>
 
-        <div class="list-item">
+        <div class="list-item" onclick="location.href='terapist-detail.html'">
             <div class="avatar"><i class="fas fa-user-md"></i></div>
             <div class="info">
                 <div class="status-badge inactive">Inactive</div>

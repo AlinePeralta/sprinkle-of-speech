@@ -115,7 +115,7 @@ main {
 .user-name {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--color-p-dark)
+    color: #333;
 }
 
 .user-avatar {
@@ -154,7 +154,7 @@ main {
 .dropdown-menu-app a {
     padding: 10px 15px;
     font-size: 0.85rem;
-    color: var(--color-p-dark);
+    color: #444;
     text-decoration: none;
     border-radius: 8px;
     display: flex;
@@ -1112,162 +1112,4 @@ body.show-chatbot .chatbot {
     .tables-myorbit-movil {
         padding: var(--padding-movil);
     }
-}
-
-/* Therapist Detail */
-
-.therapist-detail-page {
-    max-width: 800px;
-    margin: 2rem auto;
-}
-
-
-.therapist-info-card {
-    background: #f2f1f9;
-    border-radius: 20px;
-    border: 1px solid #f0f0f0;
-    padding: 20px;
-    color: var(--color-p-dark);
-}
-
-.profile-avatar {
-    width: 80px;
-    height: 80px;
-    font-size: 2rem;
-    border-radius: 20px;
-}
-
-.therapist-name {
-    font-weight: 700;
-    color: var(--color-p)
-}
-
-.contact-info {
-    font-size: 0.9rem;
-}
-
-.mini-data .label {
-    display: block;
-    font-size: 0.75rem;
-}
-
-.mini-data .value {
-    font-size: 0.85rem;
-}
-
-
-.admin-controls-bar {
-    background: var(--white);
-    border: 1px dashed var(--color-a-opacity);
-    border-radius: 15px;
-    padding: 15px 20px;
-    margin-bottom: 3rem;
-}
-
-.control-label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-sec)
-}
-
-.btn-delete-therapist {
-    height: 40px;
-    padding: 0 20px;
-    background: transparent;
-    border: 1px solid var(--color-danger);
-    color: var(--color-danger);
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: all 0.2s ease;
-    cursor: pointer;
-}
-
-.btn-delete-therapist:hover {
-    background: var(--color-danger);
-    color: white;
-}
-
-.btn-delete-therapist:active {
-    transform: scale(0.95);
-}
-
-/* Clients List Section */
-.section-title {
-    font-weight: 700;
-    color: var(--color-p);
-    margin: 0;
-}
-
-.total-badge {
-    background: #f4f4f4;
-    color: var(--text-gray);
-    padding: 5px 12px;
-    border-radius: 10px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.client-item {
-    background: #fff;
-    border: 1px solid #f0f0f0;
-    border-radius: 15px;
-    color: var(--text-gray);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.client-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-}
-
-.avatar-mini {
-    width: 45px;
-    height: 45px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-p);
-    background: var(--bg-light);
-}
-
-.client-names .child-name {
-    font-size: 0.85rem;
-}
-
-.plan-badge {
-    font-size: 0.6rem;
-    font-weight: 800;
-    padding: 3px 10px;
-    border-radius: 50px;
-    display: inline-block;
-}
-
-.plan-badge.annual {
-    background: #f0ecff;
-    color: var(--color-p);
-}
-
-.plan-badge.monthly {
-    background: #fff9e6;
-    color: #f39c12;
-}
-
-.btn-remove-client {
-    border: none;
-    background: transparent;
-    color: var(--color-danger);
-    font-size: 1.1rem;
-    padding: 10px;
-    cursor: pointer;
-    transition: transform 0.1s ease;
-}
-
-.btn-remove-client:hover {
-    transform: scale(1.1);
-}
-
-.btn-remove-client:active {
-    transform: scale(0.9);
 }

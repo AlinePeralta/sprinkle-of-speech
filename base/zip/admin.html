@@ -128,7 +128,7 @@
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
 <script>
- 
+  // Función para abrir/cerrar el menú de navegación en móvil
   function toggleMenu() {
     const nav = document.getElementById('navMenu');
     const hamburger = document.getElementById('hamburger');
@@ -136,12 +136,13 @@
     hamburger.classList.toggle('open');
   }
 
-
+  // Función para abrir/cerrar el dropdown de perfil
   function toggleProfileDropdown() {
     const dropdown = document.getElementById('dropdownMenu');
     dropdown.classList.toggle('show');
   }
 
+  // Cerrar dropdown si se hace clic fuera del área de perfil
   window.onclick = function(event) {
     if (!event.target.closest('.user-profile-dropdown')) {
       const dropdown = document.getElementById('dropdownMenu');
