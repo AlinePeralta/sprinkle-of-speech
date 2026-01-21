@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="SERTI">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta name="theme-color" content="#8256FB" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+    <!-- ROOT CSS -->
+    <link rel="stylesheet" href="css/root.css" rel="stylesheet">
+    <title>Calendar - Sprinkle of Speech</title>
+    <script src="https://kit.fontawesome.com/14886b98f9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<header class="main-header">
+  <div><img src="img/logo.png" alt="Sprinkle of Speech" class="logonav"></div>
+  
+  <div class="header-right">
+
+    <nav class="nav-menu" id="navMenu">
+      <a href="#" class="active-link"><i class="fas fa-home"></i> Home</a>
+      <a href="#"><i class="fas fa-user-md"></i> Therapists</a>
+      <a href="#"><i class="fas fa-users"></i> Payment </a>
+      <a href="#"><i class="fas fa-file-alt"></i> Users</a>
+      <a href="#"><i class="fas fa-chart-bar"></i> Events</a>
+      <a href="#"><i class="fas fa-cog"></i> Ajustes</a>
+    </nav>
+
+  
+<div class="user-profile-dropdown color-p" id="userProfile">
+      <div class="profile-trigger" onclick="toggleProfileDropdown()">
+      
+        <div ><img src="img/avatar.png" alt="" class="user-avatar"></div>
+          <span class="user-name">Aline</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      
+  
+      <div class="dropdown-menu-app color-p" id="dropdownMenu">
+        <a href="#"><i class="fas fa-user-circle"></i> Mi Perfil</a>
+        <a href="#" class="logout-link"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+      </div>
+    </div>
+
+    
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+
+<main >
+<section id="calendarSection" class="container-view">
+        <div class="card-list shadow-sm">
+
+            <div class="calendar-header d-flex align-items-center justify-content-between mb-4">
+                <button class="btn-calendar-nav" id="prevMonth" title="Mes Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="calendar-month-year text-center">
+                    <h2 class="mb-0" id="monthDisplay">Enero 2026</h2>
+                </div>
+                <button class="btn-calendar-nav" id="nextMonth" title="Mes Siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+        
+            <div class="calendar-grid mb-4" id="calendarGrid">
+                <div class="day-name">D</div>
+                <div class="day-name">L</div>
+                <div class="day-name">M</div>
+                <div class="day-name">M</div>
+                <div class="day-name">J</div>
+                <div class="day-name">V</div>
+                <div class="day-name">S</div>
+              
+            </div>
+
+      
+            <div class="events-list-section">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="section-subtitle mb-0" id="selectedDateTitle">Events for today</h4>
+                </div>
+
+                <div class="events-container" id="eventsContainer">
+             
+                    <p class="text-center text-muted py-4">Select a day to view events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+    <!-- MODAL: -->
+<div class="modal fade" id="newEventModal" tabindex="-1" aria-labelledby="newEventModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newEventModalLabel">Nuevo Evento</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="eventForm">
+   
+            <div class="mb-4">
+                <label class="form-label-custom">Nombre del Evento</label>
+                <input type="text" id="eventName" class="input-app" placeholder="Ej: Sesión con Mateo" required>
+            </div>
+
+    
+            <div class="mb-4">
+                <label class="form-label-custom">Seleccionar Icono</label>
+                <div class="icon-selector-grid">
+                    <div class="icon-option selected" data-icon="fa-comment-dots"><i class="fas fa-comment-dots"></i></div>
+                    <div class="icon-option" data-icon="fa-laptop-medical"><i class="fas fa-laptop-medical"></i></div>
+                    <div class="icon-option" data-icon="fa-users"><i class="fas fa-users"></i></div>
+                    <div class="icon-option" data-icon="fa-handshake"><i class="fas fa-handshake"></i></div>
+                </div>
+                <input type="hidden" id="selectedIcon" value="fa-comment-dots">
+            </div>
+
+
+            <div class="row mb-4">
+                <div class="col-6">
+                    <label class="form-label-custom">Día</label>
+                    <input type="date" id="eventDate" class="input-app" required>
+                </div>
+                <div class="col-6">
+                    <label class="form-label-custom">Hora</label>
+                    <input type="time" id="eventTime" class="input-app" required>
+                </div>
+            </div>
+
+
+            <div class="mb-2">
+                <label class="form-label-custom">Repetición</label>
+                <div class="recurrence-options">
+                    <label class="recurrence-item">
+                        <input type="radio" name="recurrence" value="once" checked>
+                        <span>Único</span>
+                    </label>
+                    <label class="recurrence-item">
+                        <input type="radio" name="recurrence" value="daily">
+                        <span>Diario</span>
+                    </label>
+                    <label class="recurrence-item">
+                        <input type="radio" name="recurrence" value="monthly">
+                        <span>Mensual</span>
+                    </label>
+                </div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary py-2 px-4" data-mdb-dismiss="modal" style="height:48px; border-radius:12px;">Cancelar</button>
+        <button type="button" class="btn-principal py-2 px-4" id="saveEventBtn">Guardar Evento</button>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="bg-footer text-center ">
+
+<div class="container p-2">
+
+  <section class="mb-2">
+    <div class="row">
+
+      <div class="col-lg-12 col-md-12 ">
+        <p class="footer-text">
+        The content of this website, including but not limited to text, graphics, logos, and all other material, is owned by Sprinkle of Speech LLC with all rights reserved unless otherwise noted. Unauthorized use and/or duplication of this material without express and written permission from Sprinkle of Speech LLC is strictly prohibited.
+        </p>
+      
+      </div>
+
+    </div>
+  </section>
+ 
+
+
+</div>
+
+<!-- Copyright -->
+<div class="text-center p-1 ">
+ <p class="footer-text pb-2"> © 2026 Copyright Sprinkle of Speech -
+  <a class="" href="#">Powered by Phantom-Analytics. </a> All Rights Reserved</p>
+</div>
+<!-- Copyright -->
+</footer>
+<!-- Footer -->
+<script type="text/javascript" src="js/myorbit.js"></script>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+<script>
+
+    const mockEvents = { "2026-0-12": [{ time: "10:00 AM", title: "Terapia Grupal", icon: "fa-users" }] };
+    let currentDate = new Date(2026, 0, 12);
+
+    const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+    function renderCalendar() {
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+        document.getElementById('monthDisplay').innerText = `${monthNames[month]} ${year}`;
+
+        const grid = document.getElementById('calendarGrid');
+        const daysToKeep = grid.querySelectorAll('.day-name');
+        grid.innerHTML = '';
+        daysToKeep.forEach(d => grid.appendChild(d));
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        for (let i = 0; i < firstDay; i++) {
+            const empty = document.createElement('div');
+            empty.className = 'day-num empty';
+            grid.appendChild(empty);
+        }
+
+        for (let i = 1; i <= daysInMonth; i++) {
+            const dayEl = document.createElement('div');
+            dayEl.className = 'day-num';
+            dayEl.innerText = i;
+            const key = `${year}-${month}-${i}`;
+
+            if (mockEvents[key]) dayEl.classList.add('has-event');
+            
+            dayEl.onclick = () => {
+                document.querySelectorAll('.day-num').forEach(el => el.classList.remove('current-day'));
+                dayEl.classList.add('current-day');
+                document.getElementById('selectedDateTitle').innerText = `Eventos para el ${i} de ${monthNames[month]}`;
+                renderEvents(key);
+            };
+            grid.appendChild(dayEl);
+        }
+    }
+
+    function renderEvents(key) {
+        const container = document.getElementById('eventsContainer');
+        container.innerHTML = '';
+        const events = mockEvents[key] || [];
+
+        if (events.length > 0) {
+            events.forEach(ev => {
+                const div = document.createElement('div');
+                div.className = 'event-card d-flex align-items-center gap-3';
+                div.innerHTML = `<div class="event-time"><span>${ev.time}</span></div>
+                                 <div class="event-details flex-grow-1"><strong>${ev.title}</strong></div>
+                                 <div class="event-category"><i class="fas ${ev.icon}"></i></div>`;
+                container.appendChild(div);
+            });
+        } else {
+            container.innerHTML = '<p class="text-center text-muted py-4">No hay eventos.</p>';
+        }
+    }
+
+
+    document.querySelectorAll('.icon-option').forEach(opt => {
+        opt.onclick = () => {
+            document.querySelectorAll('.icon-option').forEach(o => o.classList.remove('selected'));
+            opt.classList.add('selected');
+            document.getElementById('selectedIcon').value = opt.getAttribute('data-icon');
+        };
+    });
+
+    document.getElementById('saveEventBtn').onclick = () => {
+        const name = document.getElementById('eventName').value;
+        const dateVal = document.getElementById('eventDate').value;
+        const timeVal = document.getElementById('eventTime').value;
+        if(!name || !dateVal || !timeVal) return alert("Completa los datos");
+
+        const d = new Date(dateVal + "T00:00:00");
+        const key = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+        
+        if(!mockEvents[key]) mockEvents[key] = [];
+        mockEvents[key].push({ time: timeVal, title: name, icon: document.getElementById('selectedIcon').value });
+
+        bootstrap.Modal.getInstance(document.getElementById('newEventModal')).hide();
+        renderCalendar();
+        renderEvents(key);
+    };
+
+    document.getElementById('prevMonth').onclick = () => { currentDate.setMonth(currentDate.getMonth() - 1); renderCalendar(); };
+    document.getElementById('nextMonth').onclick = () => { currentDate.setMonth(currentDate.getMonth() + 1); renderCalendar(); };
+
+    function toggleProfileDropdown() { document.getElementById('dropdownMenu').classList.toggle('show'); }
+
+    renderCalendar();
+    renderEvents("2026-0-12");
+</script>
+<script>
+ 
+  function toggleMenu() {
+    const nav = document.getElementById('navMenu');
+    const hamburger = document.getElementById('hamburger');
+    nav.classList.toggle('active');
+    hamburger.classList.toggle('open');
+  }
+
+
+  function toggleProfileDropdown() {
+    const dropdown = document.getElementById('dropdownMenu');
+    dropdown.classList.toggle('show');
+  }
+
+  window.onclick = function(event) {
+    if (!event.target.closest('.user-profile-dropdown')) {
+      const dropdown = document.getElementById('dropdownMenu');
+      if (dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+      }
+    }
+  }
+</script>
+</body>
+
+</html>

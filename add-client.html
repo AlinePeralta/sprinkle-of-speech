@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="SERTI">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta name="theme-color" content="#8256FB" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+    <!-- ROOT CSS -->
+    <link rel="stylesheet" href="css/root.css" rel="stylesheet">
+    <title>Detail - Sprinkle of Speech</title>
+    <script src="https://kit.fontawesome.com/14886b98f9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<header class="main-header">
+  <div><img src="img/logo.png" alt="Sprinkle of Speech" class="logonav"></div>
+  
+  <div class="header-right">
+
+    <nav class="nav-menu" id="navMenu">
+      <a href="#" class="active-link"><i class="fas fa-home"></i> Home</a>
+      <a href="#"><i class="fas fa-user-md"></i> Therapists</a>
+      <a href="#"><i class="fas fa-users"></i> Payment </a>
+      <a href="#"><i class="fas fa-file-alt"></i> Users</a>
+      <a href="#"><i class="fas fa-chart-bar"></i> Events</a>
+      <a href="#"><i class="fas fa-cog"></i> Ajustes</a>
+    </nav>
+
+  
+<div class="user-profile-dropdown color-p" id="userProfile">
+      <div class="profile-trigger" onclick="toggleProfileDropdown()">
+      
+        <div ><img src="img/avatar.png" alt="" class="user-avatar"></div>
+          <span class="user-name">Aline</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      
+  
+      <div class="dropdown-menu-app color-p" id="dropdownMenu">
+        <a href="#"><i class="fas fa-user-circle"></i> Mi Perfil</a>
+        <a href="#" class="logout-link"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+      </div>
+    </div>
+
+    
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+
+<main >
+  <section id="addClientSection" class="container-view">
+        <div class="card-list shadow-sm">
+   
+            <div class="header-section d-flex align-items-center gap-3 mb-1">
+                <button class="btn-back btn-back-no-margin" onclick="history.back()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h2 class="title-page title-page-no-margin">Add New Client</h2>
+            </div>
+
+            <form class="app-form p-2">
+    
+                <div class="divider mb-1 section-divider">
+                    <i class="fas fa-user-friends me-2 color-p"></i> Parent Information
+                </div>
+                
+                <div class="row g-4 mb-1">
+                    <div class="col-12">
+                        <div class="form-outline">
+                            <input type="text" id="parentName" class="form-control" placeholder=" " required />
+                            <label class="form-label" for="parentName">Full Name (Parent)</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-outline">
+                            <input type="email" id="parentEmail" class="form-control" placeholder=" " required />
+                            <label class="form-label" for="parentEmail">Email Address</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-outline">
+                            <input type="tel" id="parentPhone" class="form-control" placeholder=" " required />
+                            <label class="form-label" for="parentPhone">Phone Number</label>
+                        </div>
+                    </div>
+                </div>
+
+       
+                <div class="divider mb-1 section-divider d-flex justify-content-between align-items-center">
+                    <span><i class="fas fa-child me-2 color-p"></i> Child Information</span>
+                </div>
+
+        
+                <div id="childrenContainer">
+                    <div class="child-entry mb-1">
+                        <div class="row g-4">
+                            <div class="col-md-8 col-12">
+                                <div class="form-outline">
+                                    <input type="text" name="childName[]" class="form-control" placeholder=" " required />
+                                    <label class="form-label">Child's Full Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="form-outline">
+                                    <input type="number" name="childAge[]" class="form-control" placeholder=" " required />
+                                    <label class="form-label">Age</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label-select mb-1 ms-1 d-block">
+                                    Assigned Center (School)
+                                </label>
+                                <select name="center[]" class="form-select custom-select-app select-styled-app">
+                                    <option value="" disabled selected>Select School...</option>
+                                    <option value="1">Lincoln Elementary</option>
+                                    <option value="2">Green Valley High</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              
+                <!-- <div class="text-center mb-1">
+                    <button  class="btn btn-outline" >
+                        <i class="fas fa-plus-circle me-1"></i> Add Another Child
+                    </button>
+                </div> -->
+
+             
+                <div class="divider mb-1 section-divider">
+                    <i class="fas fa-credit-card me-2 color-p"></i> Payment Configuration
+                </div>
+
+                <div class="payment-breakdown p-3 mb-1">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="form-outline">
+                                <input type="number" id="therapistFee" class="form-control" placeholder=" " required />
+                                <label class="form-label" for="therapistFee">Therapist Rate ($)</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-outline">
+                                <input type="number" id="sprinkleFee" class="form-control" placeholder=" " value="10" required />
+                                <label class="form-label" for="sprinkleFee">Sprinkle Fee ($)</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-outline">
+                                <input type="number" id="phantomFee" class="form-control" placeholder=" " value="5" required />
+                                <label class="form-label" for="phantomFee">Phantom Fee ($)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="total-preview mt-3 pt-3 border-top d-flex justify-content-between align-items-center">
+                        <span class="total-label">Total per Session:</span>
+                        <strong class="total-amount">$0.00</strong>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-principal w-100 py-3 mt-2">
+                    Register parent & child
+                </button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-footer text-center ">
+
+<div class="container p-2">
+
+  <section class="mb-1">
+    <div class="row">
+
+      <div class="col-lg-12 col-md-12 ">
+        <p class="footer-text">
+        The content of this website, including but not limited to text, graphics, logos, and all other material, is owned by Sprinkle of Speech LLC with all rights reserved unless otherwise noted. Unauthorized use and/or duplication of this material without express and written permission from Sprinkle of Speech LLC is strictly prohibited.
+        </p>
+      
+      </div>
+
+    </div>
+  </section>
+ 
+
+
+</div>
+
+<!-- Copyright -->
+<div class="text-center p-1 ">
+ <p class="footer-text pb-2"> © 2026 Copyright Sprinkle of Speech -
+  <a class="" href="#">Powered by Phantom-Analytics. </a> All Rights Reserved</p>
+</div>
+<!-- Copyright -->
+</footer>
+<!-- Footer -->
+<script type="text/javascript" src="js/myorbit.js"></script>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+<script>
+ 
+  function toggleMenu() {
+    const nav = document.getElementById('navMenu');
+    const hamburger = document.getElementById('hamburger');
+    nav.classList.toggle('active');
+    hamburger.classList.toggle('open');
+  }
+
+
+  function toggleProfileDropdown() {
+    const dropdown = document.getElementById('dropdownMenu');
+    dropdown.classList.toggle('show');
+  }
+
+  window.onclick = function(event) {
+    if (!event.target.closest('.user-profile-dropdown')) {
+      const dropdown = document.getElementById('dropdownMenu');
+      if (dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+      }
+    }
+  }
+</script>
+</body>
+
+</html>

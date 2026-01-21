@@ -59,7 +59,7 @@
 <main >
 <section id="therapistDetail" class="container-view therapist-detail-page">
     <div class="card-list">
-        
+
         <div class="header-section d-flex align-items-center justify-content-between mb-4">
             <div class="d-flex align-items-center gap-3">
                 <button class="btn-back" onclick="history.back()" aria-label="Regresar">
@@ -115,7 +115,13 @@
         <div class="clients-section">
             <div class="section-header d-flex align-items-center justify-content-between mb-3">
                 <h4 class="section-title">Assigned Clients</h4>
-                <span class="total-badge">12 Total</span>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="total-badge me-2">12 Total</span>
+                
+                    <button class="btn-principal py-1 px-3" style="height: 35px; font-size: 0.8rem; border-radius: 10px;" onclick="location.href='add-client.html'">
+                        <i class="fas fa-plus me-1"></i> Add
+                    </button>
+                </div>
             </div>
 
             <div class="client-list-container">
@@ -184,7 +190,7 @@
 
     </div>
   </section>
-  <!-- Section: Text -->
+ 
 
 
 </div>
