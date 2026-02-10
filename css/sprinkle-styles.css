@@ -35,7 +35,7 @@ Fuente contenid: Prompt 300
     --color-footer: #8256FB;
     --color-white: #ffffff;
     --color-navbar: #9e264a;
-    --color-loading-opacity: #2b1d1fa8;
+    --color-loading-opacity: hwb(275 31% 53% / 0.449);
     --color--navbar-text: rgba(255,255,255,0.5);
     --color--gris: #6c757d;
     --color--gris1: #f1f1f1fe;
@@ -1547,3 +1547,72 @@ body.show-chatbot .chatbot {
     color: #444;
     font-weight: 500;
 }
+
+
+/*---------------------LOADING-------------------------------*/
+
+/* WRAPPER */
+.loader-wrapper {
+  position: fixed;
+  inset: 0;
+  background: var(--color-loading-opacity); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  z-index: 9999;
+}
+
+
+.loader-ring {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: 4px solid rgba(170, 154, 190, 0.884);
+  border-top-color: var(--color-white);
+  animation: spin 1s linear infinite;
+}
+
+
+.loader-text {
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-white);
+
+}
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 480px) {
+  .loader-ring {
+    width: 48px;
+    height: 48px;
+    border-width: 3px;
+  }
+
+  .loader-text {
+    font-size: 0.85rem;
+  }
+}
+
+.loader-text {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
