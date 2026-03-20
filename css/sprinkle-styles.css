@@ -234,6 +234,12 @@ main {
     color: var(--color-white);
 }
 
+.sm{
+    height: 35px;
+    font-size: 0.8rem; 
+    border-radius: 10px;
+}
+
 /* Botón Secundario */
 .btn-secundario {
     background-color: var(--color--gris1);
@@ -1069,6 +1075,33 @@ body.show-chatbot .chatbot {
         transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         padding: 2rem;
     }
+        .btn-principal, .btn-secundario, .btn-outline, .btn-principal-app, .btn-camera-select, .btn-link {
+            font-size: 12px;
+            padding: 8px 10px;
+            height: 38px;
+        }
+
+        .btn-delete-therapist{
+            height: 38px!important;
+             padding: 8px 10px!important;
+         font-size: 12px!important;
+         }
+    
+            .profile-avatar{
+                width: 30px!important;
+                height: 30px!important;
+                font-size: 1.4rem!important;
+                background-color: none;
+            }
+            .contact-info{
+                font-size: .8rem;
+            }
+             .mini-data .value{
+                font-size: .75rem;
+            }
+             .mini-data .label{
+                font-size: .65rem;
+            }
 
     .nav-menu.active {
         right: 0;
@@ -1185,6 +1218,11 @@ body.show-chatbot .chatbot {
     font-size: 0.85rem;
     transition: all 0.2s ease;
     cursor: pointer;
+}
+.sm{
+    height: 35px;
+    font-size: 0.8rem; 
+    border-radius: 10px;
 }
 
 .btn-delete-therapist:hover {

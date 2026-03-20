@@ -106,8 +106,11 @@
                     <label for="statusSwitch"></label>
                 </div>
             </div>
-            <button type="button" class="btn-delete-therapist" onclick="confirmDeleteTherapist()">
-                <i class="fas fa-trash-alt me-2"></i> Delete Therapist
+             <button type="button" class="btn-principal sm" >
+                <i class="fas fa-edit me-2"></i> Update
+            </button>
+            <button type="button" class="btn-delete-therapist sm" onclick="confirmDeleteTherapist()">
+                <i class="fas fa-trash-alt me-2"></i> Delete 
             </button>
         </div>
 
@@ -118,7 +121,7 @@
                 <div class="d-flex align-items-center gap-2">
                     <span class="total-badge me-2">12 Total</span>
                 
-                    <button class="btn-principal py-1 px-3" style="height: 35px; font-size: 0.8rem; border-radius: 10px;" onclick="location.href='add-client.html'">
+                    <button class="btn-principal sm py-1 px-3" onclick="location.href='add-client.html'">
                         <i class="fas fa-plus me-1"></i> Add
                     </button>
                 </div>
@@ -207,7 +210,6 @@
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
 <script>
- 
   function toggleMenu() {
     const nav = document.getElementById('navMenu');
     const hamburger = document.getElementById('hamburger');
@@ -215,6 +217,12 @@
     hamburger.classList.toggle('open');
   }
 
+  function closeMenu() {
+    const nav = document.getElementById('navMenu');
+    const hamburger = document.getElementById('hamburger');
+    nav.classList.remove('active');
+    hamburger.classList.remove('open');
+  }
 
   function toggleProfileDropdown() {
     const dropdown = document.getElementById('dropdownMenu');
@@ -222,9 +230,14 @@
   }
 
   window.onclick = function(event) {
+    if (event.target.closest('#navMenu a')) {
+      closeMenu();
+    }
+
+   
     if (!event.target.closest('.user-profile-dropdown')) {
       const dropdown = document.getElementById('dropdownMenu');
-      if (dropdown.classList.contains('show')) {
+      if (dropdown && dropdown.classList.contains('show')) {
         dropdown.classList.remove('show');
       }
     }
